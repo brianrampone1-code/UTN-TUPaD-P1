@@ -1,0 +1,87 @@
+#Actividad 1
+for i in range (101):
+    if(i<100):
+        if(i<10):
+            print(f"00{i}")
+        else:
+            print(f"0{i}")  
+print(i)
+
+#Actividad 2
+numero = input("Escriba un numero")
+cantidad_dig = len(numero)
+
+#Actividad 3
+numero1 = int(input("Escriba un numero "))
+numero2 = int(input("Escriba el segundo numero "))
+total=0
+for i in range(numero1, numero2):
+    if(i>numero1 ):
+        total = total +i
+print(total)
+
+#Actividad 4
+numero = int(input("Ingrese un numero"))
+suma=numero
+while(numero!=0):
+    numero = int(input("Ingrese un numero"))
+    suma=suma +numero
+print(f"La suma total es: {suma}")
+
+#Actividad 5
+import random
+numero = random.randint(0,9)
+elegido = int(input("Ingrese el numero"))
+intentos = 1
+while(numero!=elegido):
+    elegido=int(input("Ingrese otro numero"))
+    intentos=intentos+1
+print(f"La cantidad de intento para encontrar el numero {numero} es {intentos}")
+
+#Actividad 6
+for i in range(100, -1, -2):
+    print(i)
+
+#Actividad 7
+numero = int(input("Ingrese un numero entero: "))
+suma=0
+for i in range(numero+1):
+    suma=suma+i 
+
+#Actividad 8
+par = 0
+impar = 0
+positivo = 0
+negativo = 0
+for i in range (9):
+    numero = int(input("Ingrese un numero: "))
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+    if numero > 0:
+        positivos += 1
+    elif numero < 0:
+        negativos += 1
+print("\nResultados:")
+print("Cantidad de pares:", par)
+print("Cantidad de impares:", impar)
+print("Cantidad de positivos:", positivo)
+print("Cantidad de negativos:", negativo)
+
+#Actividad 9
+suma = 0
+for i in range(99):
+    numero = int(input(f"Ingrese el número {i+1}: "))
+    suma += numero
+media = suma / 100
+print("\nLa media de los números ingresados es:", media)
+
+#Actividad 10
+numero = int(input("Ingrese un número: "))
+invertido = 0
+while numero > 0:
+    digito = numero % 10       
+    invertido = invertido * 10 + digito
+    numero = numero // 10       
+print("Número invertido:", invertido)
