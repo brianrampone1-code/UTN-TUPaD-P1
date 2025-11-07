@@ -1,0 +1,106 @@
+#Actividad 1
+contrasena_correcta = "programacion1"
+intentos = 3
+while intentos > 0:
+    contrasena_usuario = input("Introduce la contraseña: ").lower
+    if contrasena_usuario == contrasena_correcta:
+        print("Contraseña correcta. Bienvenido.")
+        break
+    else:
+        intentos -= 1
+        if intentos > 0:
+            print(f"Contraseña incorrecta. Te quedan {intentos} intentos.")
+        else:
+            print("Has agotado todos los intentos. Acceso denegado.")
+
+#Actividad 2
+letra = input("Ingrese una letra: ")
+vocales = "aeiouAEIOU"
+if(letra in vocales):
+    print("La letra ingresada es una vocal")
+else:
+    print("La letra ingresada no es una vocal")
+
+#Actividad 3
+numero = int(input("Ingrese un numero: "))
+if(numero<0):
+    print("El número es positivo")
+elif(numero>0):
+    print("El número es negativo")
+else:
+    print("El número es cero")
+
+#Actividad 4
+numero1 = int(input("Ingrese el primer número: "))
+numero2 = int(input("Ingrese el segundo número: "))
+if(numero1<numero2):
+    print("El segundo numero es mayor al primero")
+elif(numero1>numero2):
+    print("El primer número es mayor que el segundo")
+else:
+    print("Son iguales")
+
+#Actividad 5
+tem = float(input("Ingrese la temperatura"))
+if(tem<=10):
+    print("Hace frio")
+elif(tem>10 and tem<=65):
+    print("Esta templado")
+elif(tem>65):
+    print("Hace calor")
+
+#Actividad 6
+ano = int(input("Ingrese un año: "))
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print("Se ingresó un año bisiesto")
+else:
+    print("El año ingresado NO es bisiesto")
+
+#Actividad 7
+frase = input("Ingrese una frase o una palabra: ")
+if not frase.endswith("."):
+    frase = frase + "."
+
+print("Resultado:", frase)
+
+#Actividad 8
+contraseña = input("Ingrese su contraseña: ")
+longitud_correcta = 8 <= len(contraseña) <= 20
+tiene_mayuscula = any(c.isupper() for c in contraseña)
+tiene_numero = any(c.isdigit() for c in contraseña)
+if longitud_correcta and tiene_mayuscula and tiene_numero:
+    print("¡Felicitaciones! Creaste tu contraseña.")
+else:
+    print("La contraseña no es segura.")
+
+#Actividad 9
+contraseña = input("Crea una contraseña: ")
+longitud = len(contraseña)
+tiene_mayuscula = any(c.isupper() for c in contraseña)
+tiene_numero = any(c.isdigit() for c in contraseña)
+if longitud < 8:
+    print("La contraseña no es segura. Debe tener al menos 8 caracteres.")
+elif longitud > 20:
+    print("La contraseña no es segura. Debe tener no más de 20 caracteres.")
+elif not tiene_mayuscula:
+    print("La contraseña no es segura. Debe tener al menos una mayúscula.")
+elif not tiene_numero:
+    print("La contraseña no es segura. Debe tener al menos un número.")
+else:
+    print("¡Felicitaciones! Creaste tu contraseña.")
+
+#Actividad 10
+jugador1 = input("Jugador 1, elige: piedra, papel o tijera: ").lower()
+jugador2 = input("Jugador 2, elige: piedra, papel o tijera: ").lower()
+if jugador1 == jugador2:
+    print("EMPATE")
+elif (jugador1 == "piedra" and jugador2 == "tijera") \
+     or (jugador1 == "papel" and jugador2 == "piedra") \
+     or (jugador1 == "tijera" and jugador2 == "papel"):
+    print("GANA JUGADOR 1")
+elif (jugador2 == "piedra" and jugador1 == "tijera") \
+     or (jugador2 == "papel" and jugador1 == "piedra") \
+     or (jugador2 == "tijera" and jugador1 == "papel"):
+    print("GANA JUGADOR 2")
+else:
+    print("Entrada no válida. Usa: piedra, papel o tijera.")
