@@ -1,0 +1,143 @@
+#Ejercicio 1
+with open("notas.txt", "w") as archivo:
+    archivo.write("Sofia , 9\n")
+    archivo.write("Marcos, 7\n")
+    archivo.write("Ana , 10\n")
+
+print("Leyendo archivo y mostrando contenido")
+
+with open("notas.txt", "r") as archivo:
+    for linea in archivo:
+        print(linea.strip())
+
+with open("notas.txt","r") as archivo:
+    for linea in archivo:
+        nombre , nota = linea.strip().split(",")
+        print(f"ALUMNO: {nombre} | NOTA: {nota}")
+
+with open("notas.txt" , "a") as archive:
+    while True:
+        ingresar_alumnos = input("Ingrese alumno nuevo (o 'n' para terminar): ")
+        if ingresar_alumnos.lower() == "n":
+            break
+        nota_nueva = input("Ingrese su respectiva nota: ")
+        archive.write(f"{ingresar_alumnos}.{nota_nueva}\n")
+        print("✅Alumno agregado correctamente.")
+
+with open("notas.txt", "w") as archivo:
+    archivo.write("Pedro,8\n")
+    archivo.write("Lucia,9\n")
+    archivo.write("Santi,6\n")
+
+print("✅ El contenido anterior fue reemplazado por una nueva lista de alumnos.")
+
+#Ejercicio 2
+with open("heladeria.csv" , "w") as archivo:
+    archivo.write("Frutilla , 300 , SI\n")
+    archivo.write("Chocolate , 400 , SI\n")
+    archivo.write("Tramontana , 500 , SI\n")
+
+print("Leyendo archivo y mostrando contenido")
+
+with open("heladeria.csv","r") as archivo:
+    for linea in archivo:
+        sabor, precio, disponibilidad = linea.strip().split(",")
+        print(f"SABOR:{sabor} | PRECIO:{precio} | DISPONIBILIDAD:{disponibilidad}\n" )
+
+sabor_nuevo = input("Agregar sabor nuevo: ")
+precio_nuevo = float(input("Agregar su precio: "))
+esta_dispo = input("Si está disponible (si o no): ")
+
+with open("heladeria.csv" , "a") as archivo:
+     archivo.write(f"{sabor_nuevo} , {precio_nuevo} , {esta_dispo}\n")
+
+print("✅ Producto agregado correctamente.")
+
+#Ejercicio 3
+with open("cine.csv", "w") as archivo:
+    archivo.write("La momia\n")
+    archivo.write("IT\n")
+    archivo.write("Casablanca\n")
+
+with open ("cine.csv" , "r") as archivo:
+        print(archivo.read())
+
+with open("cine.csv","r") as f:
+    contenido = f.read()
+    print(contenido)
+
+peli_new = input("Agregar una pelicula nueva:")
+with open("cine.csv" , "a")as archivo:
+    archivo.write(f"{peli_new}\n")
+
+print("Película agregada con éxito!")
+
+with open("cine.csv", "r") as archivo:
+    print(archivo.read())
+  
+
+with open("cine.csv", "r") as archivo:
+    print(archivo.read())
+  
+
+#Ejercicio 4
+with open("pacientes.csv","w") as archivo:
+    archivo.write("Horacio , 76 , Si\n")
+    archivo.write("Raul , 34 , Si\n")
+    archivo.write("Laura , 21 , Si\n")
+
+print("Leyendo archivo y mostrando contenido")
+
+with open ("pacientes.csv" , "r") as archivo:
+        print(archivo.read())
+
+
+nuevo = input("Agregar nombre de paciente nuevo: ")
+edad_nuevo = input("Agregar edad de paciente nuevo: ")
+turno_dispo = input("Si tiene turno (“si” / “no”):" )
+
+with open("pacientes.csv","a") as archivo:
+        archivo.write(f"{nuevo} , {edad_nuevo} ,{turno_dispo}\n" )
+
+with open("pacientes.csv","r") as archivo:
+    for linea in archivo:
+        nombre, edad , turno = linea.strip().split(",")
+        print(f"NOMBRE:{nombre} | EDAD:{edad} | TURNO:{turno}\n" )
+
+print("Paciente agregado con éxito!")
+
+with open("pacientes.csv", "r") as archivo:
+    print(archivo.read())
+  
+
+
+#Ejercicio 5
+with open("excursiones.csv", "w",) as archivo:
+    archivo.write("Bariloche,25000,si\n")
+    archivo.write("Misiones,30000,no\n")
+    archivo.write("Mendoza,20000,si\n")
+
+print("Archivo 'excursiones.csv' creado correctamente.\n")
+
+
+print("Destinos disponibles:")
+with open("excursiones.csv", "r") as archivo:
+    for linea in archivo:
+        destino, precio, disponible = linea.strip().split(",")
+        print(f"- {destino}")
+
+print("Agregar una nueva excursión:")
+destino_nuevo = input("Ingrese el nombre del destino: ")
+precio_nuevo = input("Ingrese el precio: ")
+disponible_nuevo = input("¿Está disponible? (si / no): ")
+
+
+with open("excursiones.csv", "a") as archivo:
+    archivo.write(f"{destino_nuevo},{precio_nuevo},{disponible_nuevo}\n")
+
+print("✅ Nueva excursión agregada correctamente.")
+
+print("Contenido actualizado:")
+with open("excursiones.csv", "r") as archivo:
+    for linea in archivo:
+        print(linea.strip())

@@ -1,0 +1,105 @@
+#Ejercicio 1
+materias = ['Lengua','Matematica','Historia','Ingles','Geografia']
+materias.append('Programacion')
+materias.remove('Lengua')
+materias.sort()
+print(materias)
+
+#Ejercicio 2
+alumnos = ["Benja","Joel","Santi","Nelson"]
+alumno = input("Ingrese el nombre de un alumno: ")
+if alumno in alumnos:   
+    print(f"La posicion del alumno es: {alumnos.index(alumno)+1}")
+else:
+    print(f"No se encuentra en la lista: {alumno}")
+
+#Ejercicio 3
+numeros = [2, 5, 3, 2, 7, 5, 2, 8, 3]
+num = int(input("Ingrese un número para contar: "))
+print(f"El número {num} aparece {numeros.count(num)} veces")
+
+#Ejercicio 4
+colores = ("Rojo", "Verde", "Azul", "Amarillo", "Negro")
+print("Primer color:", colores[0])
+print("Último color:", colores[-1])
+color = input("Ingrese un color: ")
+if color in colores:
+    print("El color está en la tupla")
+else:
+    print("El color no está en la tupla")
+print("Cantidad total de colores:", len(colores))
+
+#Ejercicio 5
+alimentos = ("Pizza", "Hamburguesa", "Ensalada", "Pasta")
+print("Segundo alimento:", alimentos[1])
+print("Último alimento:", alimentos[-1])
+print("Total de alimentos:", len(alimentos))
+
+#Ejercicio 6
+amigos = {"Juan", "Pedro", "María", "Pedro", "Lucía"}
+print("Conjunto sin duplicados:", amigos)
+amigos.add("Carla")
+amigos.discard("Juan")
+print("Cantidad total de amigos:", len(amigos))
+
+#Ejercicio 7
+materias1 = {"Programación", "Matemática", "Inglés"}
+materias2 = {"Programación", "Base de Datos", "Inglés"}
+print("Materias comunes:", materias1 & materias2)
+print("Exclusivas del primer conjunto:", materias1 - materias2)
+print("Todas las materias sin repetir:", materias1 | materias2)
+
+#Ejercicio 8
+alumnos = {"Juan": 8, "María": 9, "Pedro": 7}
+alumnos["Lucía"] = 10
+alumnos["Pedro"] = 8
+print("Alumnos y notas:", alumnos)
+
+#Ejercicio 9
+login = {"usuario": "admin", "contraseña": "1234"}
+usuario = input("Usuario: ")
+contraseña = input("Contraseña: ")
+if usuario == login["usuario"] and contraseña == login["contraseña"]:
+    print("Acceso concedido")
+else:
+    print("Acceso denegado")
+
+#Ejericio 10
+ciudades = {"Mendoza": 1200000, "Córdoba": 1500000, "Rosario": 1300000}
+ciudades.pop("Rosario")
+print("Diccionario actualizado:", ciudades)
+
+#Ejercicio 11  
+precios = {"pan": 500, "leche": 750, "queso": 1200, "jamón": 1500}
+producto = input("Ingrese el nombre de un producto: ")
+if producto in precios:
+    print(f"El precio de {producto} es ${precios[producto]}")
+else:
+    print("El producto no se encuentra en la lista")
+
+#Ejercicio 12 
+numeros = [1, 2, 3, 2, 4, 1, 5, 3]
+conjunto_numeros = set(numeros)
+print("Lista original:", numeros)
+print("Conjunto sin duplicados:", conjunto_numeros)
+
+#Ejercicio 13 
+a = {1, 2, 3, 4, 5}
+b = {4, 5, 6, 7, 8}
+print("Elementos en común:", a & b)
+
+#Ejercicio 14
+notas = {"Juan": 8, "María": 9, "Pedro": 7}
+promedio = sum(notas.values()) / len(notas)
+print("Promedio general:", promedio)
+
+#Ejercicio 15
+productos = {}
+for i in range(3):
+    nombre = input("Ingrese el nombre del producto: ")
+    precio = float(input("Ingrese el precio: "))
+    productos[nombre] = precio
+
+print("Productos y precios:")
+for nombre, precio in productos.items():
+    print(f"{nombre}: ${precio}")

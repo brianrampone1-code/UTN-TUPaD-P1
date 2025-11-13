@@ -1,0 +1,60 @@
+#Actividad 1
+print("Escribiendo con write()")
+with open("productos.csv", "w") as archivo:
+    archivo.write("Nombre,Precio,Cantidad\n")
+    archivo.write("Lapicera,120.5,30\n")
+    archivo.write("Regla,100.0,25\n")
+
+#Actividad 2
+print("Leyendo archivo CSV y separando datos")
+with open("productos.csv", "r") as archivo:
+    for linea in archivo:
+        linea = linea.strip()
+        partes = linea.split(",")
+        print(partes)
+
+#Activiad 3
+nombre_nuevo = input("ingrese el nombre de producto nuevo: ")
+precio_nuevo = float(input("Ingrese el precio del producto nuevo: "))
+cantidad = float(input("Ingrese la cantidad del prducto nuevo: "))
+
+with open("productos.txt", "a") as archivo:
+    archivo.write(f"{nombre_nuevo},{precio_nuevo},{cantidad}\n")
+
+print("Producto agregado correctamente.")
+
+#Actividad 4
+productos = []  
+with open("productos.txt", "r") as archivo:
+    for linea in archivo:
+        nombre, precio, cantidad = linea.strip().split(",")
+        producto = {
+            "nombre": nombre,
+            "precio": precio,
+            "cantidad":cantidad
+        }
+        productos.append(producto)
+
+for p in productos:
+    print(f"Producto: {p['nombre']} | Precio: ${p['precio']} | Cantidad: {p['cantidad']}")
+
+
+#Actividad 5
+buscar_nombre = input("Ingrese el nombre que dea buscar: ").strip()
+encontrado = False
+
+for p in productos:
+    if p ["nombre"].lower() == buscar_nombre.lower():
+        print(f"✅Producto encotrado: ")
+        print(f"nombre: {p['nombre']} , Precio: ${p['precio']} , Cantidad: {p['cantidad']}")
+        encontrado = True
+
+if not encontrado:
+    print("El producto no existe en la lista.")
+
+#Actividad 6
+with open("productos.txt" , "w") as archivo:
+    for p in productos:
+        archivo.write(f"{p['nombre']},{p['precio']},{p['cantidad']}")
+
+print("Archivo 'productos.txt' actualizado correctamente.")
